@@ -1,0 +1,19 @@
+{
+    "name": "advanced-utilities",
+    "version": "2.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "fortnite-api-io": "^1.8.0",
+        "fortnite.js": "^2.1.4",
+        "node-fetch": "^2.6.1",
+        "request": "^2.88.2"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
+}
