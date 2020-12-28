@@ -4,6 +4,7 @@ const fs = require("./libs/fs");
 const json = require("./libs/json");
 const minecraft = require("./libs/minecraft");
 //const fortnite = require("./libs/fortnite");
+let a;
 class au{
 constructor(){
 this.json = new json()
