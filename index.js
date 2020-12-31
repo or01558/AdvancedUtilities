@@ -3,7 +3,7 @@ const fivem = require("./libs/fivem");
 const fs = require("./libs/fs");
 const json = require("./libs/json");
 const minecraft = require("./libs/minecraft");
-//const fortnite = require("./libs/fortnite");
+const fortnite = require("./libs/fortnite");
 let a;
 class au{
 constructor(){
