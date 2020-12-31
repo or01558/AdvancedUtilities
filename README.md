@@ -61,6 +61,59 @@ Console.Close();
 }
 Stats();
 ```
+**Fortnite Class** <br/>
+Get user id:
+```js
+const au = require("advanced-utilities");
+const fortnite = au.fortnite;
+const Console = au.Console;
+async function Stats(){
+const user = await fortnite.getUserId("Ninja");//getUserId(username)
+Console.Open();
+Console.WriteLine(user)//User Object
+Console.Close();
+}
+Stats();
+```
+Get user profile:
+```js
+const au = require("advanced-utilities");
+const fortnite = au.fortnite;
+const Console = au.Console;
+async function Stats(){
+const profile = await fortnite.getProfile("Ninja");//getProfile(username or id,platform),If you don't specfic a platform,The platform will be pc.
+Console.Open();
+Console.WriteLine(profile) //Profile Object
+Console.Close();
+}
+Stats();
+```
+Get fortnite shop:
+```js
+const au = require("advanced-utilities");
+const fortnite = au.fortnite;
+const Console = au.Console;
+async function Stats(){
+const shop = await fortnite.getShop();
+Console.Open();
+Console.WriteLine(shop) //Shop array. Each array value has an object that contains a details about specific item.
+Console.Close();
+}
+Stats();
+```
+Get fortnite shop:
+```js
+const au = require("advanced-utilities");
+const fortnite = au.fortnite;
+const Console = au.Console;
+async function Stats(){
+const challenges = await fortnite.getChallenges();
+Console.Open();
+Console.WriteLine(challenges) //challenges array. Each array value has an object that contains a details about specific challenge.
+Console.Close();
+}
+Stats();
+```
 **File System Class:** <br/>
 Create File:
 ```javascript

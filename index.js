@@ -12,6 +12,7 @@ this.Console = new Console()
 this.fivem = new fivem()
 this.fs = new fs()
 this.minecraft = new minecraft();
+this.fortnite = new fortnite();
 }
 }
 module.exports = new au();
