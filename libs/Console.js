@@ -89,14 +89,16 @@ class Console {
 		} else console.log(res);
 	}
 	async Write(message) {
-		let NoParams = new Error(
+		const NoParams = new Error(
 			"The function must get one argument - the message to write"
 		);
 		if (message == undefined) throw NoParams;
-		let ConsoleClosed = new Error(
+		const ConsoleClosed = new Error(
 			"The Console is close!,Open it with Console.Open()"
 		);
 		if (Interface == undefined) throw ConsoleClosed;
+        const NotString = new Error("The type of the message argument must be a string");
+        if(typeof message !== "string") throw NotString;
         process.stdout.write(message);
 	}
 }
