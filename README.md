@@ -4,7 +4,7 @@
 ### Click Below for joining ###
 [Discord-Server](https://discord.gg/Ykwr258WSK)
 ## Examples:  
-**Console Class:**
+**Console Class:** \
 Console ReadLine:
 ```javascript
 const au = require("advanced-utilities");
