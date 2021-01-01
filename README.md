@@ -5,6 +5,7 @@
 [Discord-Server](https://discord.gg/Ykwr258WSK)
 ## Examples:  
 **Console Class:**
+Console ReadLine:
 ```javascript
 const au = require("advanced-utilities");
 const Console = au.Console;
@@ -14,6 +15,27 @@ let num = await au.Console.ReadLine("Please type one number","number");
 Console.Close();
 }
 ConsoleInput();
+```
+Console WriteLine:
+```javascript
+const au = require("advanced-utilities");
+const Console = au.Console;
+Console.Open();
+Console.WriteLine("Hi");
+Console.Close();
+}
+```
+Console Write:
+```javascript
+const au = require("advanced-utilities");
+const Console = au.Console;
+Console.Open();
+Console.Write("Hello ");
+Console.Write("Hello2 ");
+Console.Write("Hello3 ");
+Console.Write("Hello4 ");
+Console.Close();
+}
 ```
 **Minecraft Class:**
 ```javascript
