@@ -28,12 +28,23 @@ class Console {
 				}
 				if (
 					type.toString().toLowerCase() == "number" &&
-					Interface !== undefined
+					Interface !== undefined || 	type.toString().toLowerCase() == "num" &&
+					Interface !== undefined || 	type.toString().toLowerCase() == "int" &&
+					Interface !== undefined 
 				)
 					Interface.question("", (value) => {
 						const error = new Error("Not a Number");
 						if (isNaN(Number(value))) reject(error);
 						resolve(parseInt(value));
+					});
+                   if (
+					type.toString().toLowerCase() == "double" &&
+					Interface !== undefined 
+				)
+					Interface.question("", (value) => {
+						const error = new Error("Not a Number");
+						if (isNaN(Number(value))) reject(error);
+						resolve(parseFloat(value));
 					});
 				if (
 					(type.toString().toLowerCase() == "boolean" &&
