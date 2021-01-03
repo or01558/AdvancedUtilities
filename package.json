@@ -10,6 +10,11 @@
         "node-fetch": "^2.6.1",
         "request": "^2.88.2"
     },
+    "homepage": "https://github.com/or01558/AdvancedUtilities",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/or01558/AdvancedUtilities"
+    },
     "devDependencies": {},
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
