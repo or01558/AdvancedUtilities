@@ -11,7 +11,8 @@ const au = require("advanced-utilities");
 const Console = au.Console;
 Console.Open();
 async function ConsoleInput(){
-let num = await au.Console.ReadLine("Please type one number","number");
+Console.WriteLine("Please type one number:");
+let num = await au.Console.ReadLine("number");
 Console.Close();
 }
 ConsoleInput();
