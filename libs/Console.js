@@ -58,7 +58,8 @@ class Console {
 							value.toLowerCase() !== "false"
 						)
 							reject("Not a true or false");
-						resolve(Boolean(value));
+                            const result = (value.toLowerCase() == "true");
+						resolve(result);
 					});
 			} catch (err) {
 				console.log(err);
