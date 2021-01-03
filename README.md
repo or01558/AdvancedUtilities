@@ -5,6 +5,18 @@
 [Discord-Server](https://discord.gg/Ykwr258WSK)
 ## Examples:  
 **Console Class:** \
+Open Console:
+```javascript
+const au = require("advanced-utilities");
+const Console = au.Console;
+Console.Open();
+```
+Close Console:
+```javascript
+const au = require("advanced-utilities");
+const Console = au.Console;
+Console.Open();
+```
 Console ReadLine:
 ```javascript
 const au = require("advanced-utilities");
@@ -12,7 +24,8 @@ const Console = au.Console;
 Console.Open();
 async function ConsoleInput(){
 Console.WriteLine("Please type one number:");
-let num = await au.Console.ReadLine("number");
+let num = await Console.ReadLine("number");//ReadLine(type),Default type is string,Types:
+//string, number || num || int, double, bool || boolean
 Console.Close();
 }
 ConsoleInput();
