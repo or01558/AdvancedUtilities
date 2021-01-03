@@ -10,7 +10,7 @@ class Console {
 			output: process.stdout,
 		});
 	}
-	async ReadLine(message, type = "string") {
+	async ReadLine(type = "string") {
 		const status = new Promise((resolve, reject) => {
 			let Closed = new Error(
 				"The Console is close!,Open it with Console.Open()"
@@ -21,17 +21,16 @@ class Console {
 					type.toString().toLowerCase() == "string" &&
 					Interface !== undefined
 				) {
-					Interface.question(message + "\n", (value) => {
+					Interface.question("", (value) => {
 						const error = new Error("Not a String");
-						if (typeof message == "string") resolve(value);
-						else reject(error);
+						resolve(value);
 					});
 				}
 				if (
 					type.toString().toLowerCase() == "number" &&
 					Interface !== undefined
 				)
-					Interface.question(message + "\n", (value) => {
+					Interface.question("", (value) => {
 						const error = new Error("Not a Number");
 						if (isNaN(Number(value))) reject(error);
 						resolve(parseInt(value));
@@ -42,10 +41,10 @@ class Console {
 					(type.toString().toLowerCase() == "bool" &&
 						Interface !== undefined)
 				)
-					Interface.question(message + "\n", (value) => {
+					Interface.question("", (value) => {
 						if (
-							value.toLowerCase !== "true" &&
-							value.toLowerCase !== "false"
+							value.toLowerCase() !== "true" &&
+							value.toLowerCase() !== "false"
 						)
 							reject("Not a true or false");
 						resolve(Boolean(value));
