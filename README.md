@@ -201,3 +201,68 @@ Console.WriteLine(res);//Response of The change
 Console.WriteLine(err);
 })
 ```
+
+**Simple Guess Game**
+## Example: ##
+```javascript
+const au = require("advanced-utilities");
+const Console = au.Console;
+                         //args1 //args2   //args3
+async function GuessGame(tries=-1,maxTries=-1,def="") { //Tries number, maxTries number, def string
+if(tries == -1) throw new Error("Must get a specific tries number"); //If No function args1
+if(maxTries == -1) throw new Error("Must get a specific max tries number")//If No function args2
+if(def === "") throw new Error("Must get a specific def string")//If No function args3
+let number;
+let secret = 0;
+let d = 0; //Game Def in Number
+Console.Open(); //Open Console before the game is starting
+switch(def.toLowerCase()){ //Modify Game Def
+case "easy":
+d = 1;
+case "normal":
+d = 2;
+case "medium":
+d = 3;
+case "hard":
+d = 4;
+case "hardest":
+d = 5;
+default:
+d = 2;
+}
+secret = Math.floor(Math.random() * 10) * d //Set the secret number
+//Start the game loop
+do{
+Console.WriteLine("Please type your guess:"); //Console Message, In this case what the user need to enter
+number = await Console.ReadLine("number"); //Get a number input
+if(number == secret || maxTries == tries) break; //The user win, break the loop or the tries done
+Console.WriteLine(`Wrong number,Tries Left: ${maxTries - tries}`); //If the number is wrong display a message to the user
+tries++; //Tries Update
+}while(tries <= maxTries && number !== secret) //The loop run only if tries !== maxTries and number !== secretNumber
+//, If the user has more tries and the number he entered doesn't equal the secretNumber
+if(number == secret){
+//User Win!
+//do...
+}else{
+//User Lose
+//do...
+}
+Console.Close(); //Close Console when the game is over
+}
+
+GuessGame(1,5,"normal"); //Function Calling
+//end
+
+//More Ideas to improve the game:
+//You can add a args check and throw errors when needed
+//Add win and lose message.
+//Add game over message.
+//Add play again option.
+//Add multiplayer option, Two players in the same computer
+//Add score option
+//Add time to guess option
+//Add what you think to improve this!
+
+//
+
+```

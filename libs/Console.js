@@ -3,14 +3,13 @@ const { resolve } = require("path");
 const rl = require("readline");
 let Interface;
 class Console {
-	constructor() {}
-	async Open() {
+	static async Open() {
 		Interface = rl.createInterface({
 			input: process.stdin,
 			output: process.stdout,
 		});
 	}
-	async ReadLine(type = "string") {
+	static async ReadLine(type = "string") {
 		const status = new Promise((resolve, reject) => {
 			let Closed = new Error(
 				"The Console is close!,Open it with Console.Open()"
@@ -68,7 +67,7 @@ class Console {
 		const result = await status;
 		return result;
 	}
-	async Close() {
+	static async Close() {
 		const status = new Promise((resolve, reject) => {
 			let Closed = new Error("The Console alreay close!");
 			if (Interface == undefined) reject(Closed);
@@ -82,7 +81,7 @@ class Console {
 				return console.log(err);
 			});
 	}
-	async WriteLine(message) {
+	static async WriteLine(message) {
 		const status = new Promise((resolve, reject) => {
 			let Closed = new Error(
 				"The Console is close!,Open it with Console.Open()"
@@ -99,7 +98,7 @@ class Console {
 			return console.log(message);
 		} else console.log(res);
 	}
-	async Write(message) {
+	static async Write(message) {
 		const NoParams = new Error(
 			"The function must get one argument - the message to write"
 		);

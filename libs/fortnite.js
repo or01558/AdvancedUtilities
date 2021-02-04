@@ -4,9 +4,7 @@ const Client = require('fortnite');
 const api = new Client("177c2431-c4d4-4af4-8551-6ded76038f87");
 
 class fortnite{
-constructor(){
-}
-async getUserId(username){
+static async getUserId(username){
 const NoUsername = new Error("The function must get a one arg - the fortnite username");
 if(username == undefined) throw NoUsername;
 const status = new Promise((reslove,reject) => {
@@ -33,7 +31,7 @@ if(err) reslove({status:404,error:"User Not Found",exists:false});
 })
 return await status;
 }
-async getProfile(UsernameOrId,platform="pc"){
+static async getProfile(UsernameOrId,platform="pc"){
 const NoParams = new Error("The function must get a one arg - the fortnite username or fortnite user id");
 if(UsernameOrId == undefined) throw NoParams;
 const status = new Promise(async(reslove,reject) => {
@@ -54,7 +52,7 @@ reslove({status:404,error:"User Not Found",exists:false});
 })
 return await status;
 }
-async getShop(){
+static async getShop(){
 const status = new Promise(async(reslove,reject) => {
 api.store().then(shop => {
 reslove(shop);
@@ -64,7 +62,7 @@ reject(err);
 })
 return await status;
 }
-async getChallenges(){
+static async getChallenges(){
 const status = new Promise(async(reslove,reject) => {
 api.challenges().then(challenges => {
 reslove(challenges);

@@ -1,8 +1,7 @@
 const fetch = require("node-fetch");
 class minecraft{
-constructor(){
-}
-async queryServer(ip, port = 25565) {
+
+static async queryServer(ip, port = 25565) {
 	const noIp = new Error(
 		"No Arguments,Usage: queryServer(server-ip,server-port)"
 	);
@@ -20,7 +19,7 @@ async queryServer(ip, port = 25565) {
 	const res = await status;
 	return res;
 }
-async pingServer(ip, port = 25565) {
+static async pingServer(ip, port = 25565) {
 	const noIp = new Error(
 		"No Arguments,Usage: queryServer(server-ip,server-port)"
 	);
@@ -38,7 +37,7 @@ async pingServer(ip, port = 25565) {
 	const res = await status;
 	return res;
 }
-async getFavicon(ip, port = 25565) {
+static async getFavicon(ip, port = 25565) {
 	const noIp = new Error(
 		"No Arguments,Usage: queryServer(server-ip,server-port)"
 	);
@@ -61,7 +60,7 @@ async getFavicon(ip, port = 25565) {
 	const res = await status;
 	return res;
 }
-async getUuid(username) {
+static async getUuid(username) {
 	const noName = new Error(
 		"No Arguments,The function must get one argument - minecraft username"
 	);
@@ -83,7 +82,7 @@ async getUuid(username) {
 	const res = await status;
 	return res;
 }
-async getProfile(id) {
+static async getProfile(id) {
 	const noId = new Error(
 		"No Arguments,The function must get one argument - minecraft user uuid"
 	);

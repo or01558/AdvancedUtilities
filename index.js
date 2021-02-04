@@ -7,12 +7,12 @@ const fortnite = require("./libs/fortnite");
 let a;
 class au{
 constructor(){
-this.json = new json()
-this.Console = new Console()
-this.fivem = new fivem()
-this.fs = new fs()
-this.minecraft = new minecraft();
-this.fortnite = new fortnite();
+this.json = json;
+this.Console = Console;
+this.fivem = fivem;
+this.fs = fs;
+this.minecraft = minecraft;
+this.fortnite = fortnite;
 }
 }
 module.exports = new au();

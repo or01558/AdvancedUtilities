@@ -2,9 +2,8 @@ const { rejects } = require("assert");
 const file = require("fs");
 const { resolve } = require("path");
 class fs{
-constructor(){
-}
-async Create(name, type = "txt", content = "") {
+
+static async Create(name, type = "txt", content = "") {
 	const status = new Promise((resolve, reject) => {
 		const noName = new Error(
 			"No Arguments,The function must get at least one argument - The name of the file"
@@ -22,7 +21,7 @@ reject("There is already file with this name and type!,to change file content us
 const res = await status;
 return res;
 }
-async Delete(path) {
+static async Delete(path) {
 	const status = new Promise((resolve, reject) => {
 		const noName = new Error(
 			"No Arguments,The function must get one argument - The path of the file"
@@ -39,7 +38,7 @@ async Delete(path) {
 	const res = await status;
     return res;
 }
-async Change(path, content) {
+static async Change(path, content) {
 	const status = new Promise((resolve, reject) => {
 		const noArgs = new Error(
 			"No Arguments,The function must get two arguments - The path of the file and the new content"

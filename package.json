@@ -6,7 +6,6 @@
     "dependencies": {
         "dotenv": "^8.2.0",
         "fortnite": "^4.3.2",
-        "fortnite.js": "^2.1.4",
         "node-fetch": "^2.6.1",
         "request": "^2.88.2"
     },
