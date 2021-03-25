@@ -1,5 +1,3 @@
-const { publicDecrypt } = require("crypto");
-const { resolve } = require("path");
 const rl = require("readline");
 let Interface;
 class Console {
@@ -27,18 +25,18 @@ class Console {
 				}
 				if (
 					type.toString().toLowerCase() == "number" &&
-					Interface !== undefined || 	type.toString().toLowerCase() == "num" &&
-					Interface !== undefined || 	type.toString().toLowerCase() == "int" &&
-					Interface !== undefined 
+					Interface !== undefined || type.toString().toLowerCase() == "num" &&
+					Interface !== undefined || type.toString().toLowerCase() == "int" &&
+					Interface !== undefined
 				)
 					Interface.question("", (value) => {
 						const error = new Error("Not a Number");
 						if (isNaN(Number(value))) reject(error);
 						resolve(parseInt(value));
 					});
-                   if (
+				if (
 					type.toString().toLowerCase() == "double" &&
-					Interface !== undefined 
+					Interface !== undefined
 				)
 					Interface.question("", (value) => {
 						const error = new Error("Not a Number");
@@ -57,7 +55,7 @@ class Console {
 							value.toLowerCase() !== "false"
 						)
 							reject("Not a true or false");
-                            const result = (value.toLowerCase() == "true");
+						const result = (value.toLowerCase() == "true");
 						resolve(result);
 					});
 			} catch (err) {
@@ -107,9 +105,9 @@ class Console {
 			"The Console is close!,Open it with Console.Open()"
 		);
 		if (Interface == undefined) throw ConsoleClosed;
-        const NotString = new Error("The type of the message argument must be a string");
-        if(typeof message !== "string") throw NotString;
-        process.stdout.write(message);
+		const NotString = new Error("The type of the message argument must be a string");
+		if (typeof message !== "string") throw NotString;
+		process.stdout.write(message);
 	}
 }
 module.exports = Console;
